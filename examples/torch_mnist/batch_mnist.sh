@@ -12,13 +12,13 @@
 
 module load apptainer
 
-export WCPROJECT=simone
+export WCPROJECT=deepskies
 
 # Repository for my project's containers
 export CONT_DIR=/wclustre/${WCPROJECT}/containers/
 
 # Torch container
-TORCH=${CONT_DIR}/pytorch-23.02-py3.sif
+TORCH=${CONT_DIR}/tensorflow-23.02-tf1-py3.sif
 
 # Check that GPUs are visible by executing nvidia-smi from within the container
 apptainer exec --home=/work1/${WCPROJECT} --nv ${TORCH} /usr/bin/nvidia-smi
